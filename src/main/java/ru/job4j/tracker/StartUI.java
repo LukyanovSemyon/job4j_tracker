@@ -9,10 +9,12 @@ public class StartUI {
         Item second = new Item(4,"second");
         Item third = new Item(6,"third");
         Item forth = new Item(7,"forth");
+        Item fifth = new Item("fifth");
         tracker.add(first);
         tracker.add(second);
         tracker.add(third);
         tracker.add(forth);
+        tracker.add(fifth);
         tracker.findById(3);
         System.out.println(tracker.findById(3).getName());
         tracker.findAll();

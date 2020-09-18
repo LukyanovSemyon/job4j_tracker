@@ -20,5 +20,7 @@ public class StartUI {
         tracker.findAll();
         System.out.println(Arrays.toString(tracker.findAll()));
         System.out.println(Arrays.toString(tracker.findByName("forth")));
+        tracker.replace(2, fifth);
+        System.out.println(Arrays.toString(tracker.findAll()));
     }
 }

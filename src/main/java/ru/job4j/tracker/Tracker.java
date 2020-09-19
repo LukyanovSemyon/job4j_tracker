@@ -52,7 +52,7 @@ public class Tracker {
             item.setId(id);
             items[index] = item;
         }
-        return index == -1 ? false : true;
+        return index != -1;
     }
 
     public boolean delete (int id) {
@@ -64,6 +64,6 @@ public class Tracker {
             items[size - 1] = null;
             size--;
         }
-        return true;
+        return index != -1;
     }
 }

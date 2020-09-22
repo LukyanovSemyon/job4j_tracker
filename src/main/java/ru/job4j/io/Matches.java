@@ -8,11 +8,10 @@ public class Matches {
                 "Выигрывает тот, кто забрал последние спички");
         int run = 11;
         boolean user = true;
+        String name = null;
         while (run > 0) {
-            if (user){
-                System.out.println("Ход 1 игрока");
-            }else
-                System.out.println("Ход 2 игрока");
+            name = user? "игрок_1" : "игрок_2";
+                System.out.println("Ходит " + name);
             Scanner input = new Scanner(System.in);
             int select = Integer.valueOf(input.nextLine());
             if (select > 3 || select < 1) {
@@ -25,9 +24,6 @@ public class Matches {
                 user = !user;
             }
         }
-        if (user){
-            System.out.println("Выиграл 2 игрок");
-        }else
-            System.out.println("Выиграл 1 игрок");
+            System.out.println("Выиграл: " + name);
     }
 }

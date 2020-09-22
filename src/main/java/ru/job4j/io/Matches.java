@@ -7,26 +7,27 @@ public class Matches {
         System.out.println("На столе лежат 11 спичек. Два игрока по очереди берут от 1 до 3 спичек.\n" +
                 "Выигрывает тот, кто забрал последние спички");
         int run = 11;
-        int user = 1;
-        int win = 0;
+        boolean user = true;
         while (run > 0) {
-            System.out.println("Ход " + user + " игрока");
+            if (user){
+                System.out.println("Ход 1 игрока");
+            }else
+                System.out.println("Ход 2 игрока");
             Scanner input = new Scanner(System.in);
             int select = Integer.valueOf(input.nextLine());
-            if (select > 3) {
-                System.out.println("Неверное число. Введите число от 0 до 3\n Осталось " + run + "спичек");
-            }else if(select < 1){
-                System.out.println("Неверное число. Введите число от 0 до 3\n Осталось " + run + "спичек");
-            }else {
+            if (select > 3 || select < 1) {
+                System.out.println("Неверное число. Введите число от 0 до 3\n Осталось спичек: " + run);
+            }else if(select > run){
+                System.out.println("Неверное число. Введите число от 0 до "+ run + "\nОсталось спичек: " + run);
+            }else{
                 run = run - select;
-                System.out.println("Осталось " + run + "спичек");
-                win = user;
-
-                if (user == 1)
-                    user = 2;
-                else user = 1;
+                System.out.println("Осталось спичек: "+ run);
+                user = !user;
             }
         }
-        System.out.println("Выиграл " + win + "игрок");
+        if (user){
+            System.out.println("Выиграл 2 игрок");
+        }else
+            System.out.println("Выиграл 1 игрок");
     }
 }

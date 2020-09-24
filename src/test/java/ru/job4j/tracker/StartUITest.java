@@ -7,7 +7,7 @@ import static org.junit.Assert.*;
 
 public class StartUITest {
     @Test
-    public void whenCreateItem(){
+    public void whenCreateItem() {
         Output output = new ConsoleOutput();
         Input in = new StubInput(
                 new String[] {"0", "Item name", "1"}
@@ -20,6 +20,7 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(tracker.findAll()[0].getName(), is("Item name"));
     }
+
     @Test
     public void whenReplaceItem() {
         Output output = new ConsoleOutput();
@@ -52,6 +53,7 @@ public class StartUITest {
         new StartUI(output).init(in, tracker, actions);
         assertThat(tracker.findById(item.getId()), is(nullValue()));
     }
+
     @Test
     public void whenFindAllItem() {
         Output output = new StubOutput();
@@ -65,16 +67,17 @@ public class StartUITest {
                 new ExitAction(output)
         };
         new StartUI(output).init(in, tracker, actions);
-        assertThat( output.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Show all items ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Show all items ===" +System.lineSeparator() +
-                "Item{id=1, name='first'}" +System.lineSeparator() +
-                "Menu." +System.lineSeparator() +
-                "0. === Show all items ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Exit Program ===" +System.lineSeparator()));
+        assertThat(output.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Show all items ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Show all items ===" + System.lineSeparator()
+                + "Item{id=1, name='first'}" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Show all items ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Exit Program ===" + System.lineSeparator()));
     }
+
     @Test
     public void whenFindByNameItem() {
         Output output = new StubOutput();
@@ -88,16 +91,17 @@ public class StartUITest {
                 new ExitAction(output)
         };
         new StartUI(output).init(in, tracker, actions);
-        assertThat( output.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Find items by name ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Find items by name ===" +System.lineSeparator() +
-                "Item{id=1, name='first'}" +System.lineSeparator() +
-                "Menu." +System.lineSeparator() +
-                "0. === Find items by name ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Exit Program ===" +System.lineSeparator()));
+        assertThat(output.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Find items by name ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Find items by name ===" + System.lineSeparator()
+                + "Item{id=1, name='first'}" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Find items by name ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Exit Program ===" + System.lineSeparator()));
     }
+
     @Test
     public void whenFindByIDItem() {
         Output output = new StubOutput();
@@ -111,14 +115,14 @@ public class StartUITest {
                 new ExitAction(output)
         };
         new StartUI(output).init(in, tracker, actions);
-        assertThat( output.toString(), is("Menu." + System.lineSeparator() +
-                "0. === Find item by Id ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Find item by Id ===" +System.lineSeparator() +
-                "Item{id=1, name='first'}" +System.lineSeparator() +
-                "Menu." +System.lineSeparator() +
-                "0. === Find item by Id ===" +System.lineSeparator() +
-                "1. === Exit Program ===" +System.lineSeparator() +
-                "=== Exit Program ===" +System.lineSeparator()));
+        assertThat(output.toString(), is("Menu." + System.lineSeparator()
+                + "0. === Find item by Id ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Find item by Id ===" + System.lineSeparator()
+                + "Item{id=1, name='first'}" + System.lineSeparator()
+                + "Menu." + System.lineSeparator()
+                + "0. === Find item by Id ===" + System.lineSeparator()
+                + "1. === Exit Program ===" + System.lineSeparator()
+                + "=== Exit Program ===" + System.lineSeparator()));
     }
 }

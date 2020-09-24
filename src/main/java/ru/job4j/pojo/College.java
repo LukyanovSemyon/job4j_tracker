@@ -8,7 +8,7 @@ public class College {
         student.setFullName("Ivanov Ivan Ivanovich");
         student.setGroup(5);
         student.setMatriculationDate(new Date());
-
-        System.out.println(student.getFullName() + " matriculated to the group number: " + student.getGroup() + " on " + student.getMatriculationDate());
+        System.out.println(student.getFullName() + " matriculated to the group number: "
+                + student.getGroup() + " on " + student.getMatriculationDate());
     }
 }

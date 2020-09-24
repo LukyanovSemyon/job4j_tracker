@@ -12,7 +12,7 @@ public class Triangle {
     }
 
     public double period(double a, double b, double c) {
-        return (a+b+c)/2;
+        return (a + b + c) / 2;
     }
 
     public boolean exist(double ab, double ac, double bc) {
@@ -20,13 +20,13 @@ public class Triangle {
     }
 
     public double area() {
-        double rsl=1;
+        double rsl = 1;
         double ab = first.distance(second);
         double ac = first.distance(third);
         double bc = second.distance(third);
         double p = period(ab, ac, bc);
         if (this.exist(ab, ac, bc)) {
-            rsl = Math.sqrt(p*(p-ab)*(p-ac)*(p-bc));
+            rsl = Math.sqrt(p * (p - ab) * (p - ac) * (p - bc));
         }
         return rsl;
     }

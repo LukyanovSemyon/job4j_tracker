@@ -11,6 +11,7 @@ public class FactTest {
     public void whenNLessThan0() {
         Fact.calc(-2);
     }
+
     @Test
     public void calc() {
         int rsl = Fact.calc(3);

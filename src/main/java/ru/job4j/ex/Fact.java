@@ -4,6 +4,7 @@ public class Fact {
     public static void main(String[] args) {
         System.out.println(calc(-1));
     }
+
     public static int calc(int n) {
      if (n < 0) {
          throw new IllegalArgumentException("Int n should be more than 0");

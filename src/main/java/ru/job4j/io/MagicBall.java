@@ -4,16 +4,16 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class MagicBall {
-    public static void main (String[] args){
+    public static void main(String[] args) {
         System.out.println("Я великий Оракул. Что ты хочешь узнать?");
         Scanner input = new Scanner(System.in);
         String answerUser = input.nextLine();
         int answer = new Random().nextInt(3);
-        if (answer == 1){
+        if (answer == 1) {
             System.out.println("Да");
-        }else if (answer == 2){
+        } else if (answer == 2) {
             System.out.println("Нет");
-        }else{
+        } else {
             System.out.println("Может быть");
         }
     }

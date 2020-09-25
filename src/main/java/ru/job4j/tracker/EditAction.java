@@ -16,6 +16,10 @@ public class EditAction implements UserAction {
     public boolean execute(Input input, Tracker tracker) {
         out.println("=== Edit item ===");
         int id = input.askInt("Enter Id: ");
+            if (tracker.findById(id) == null) {
+                out.println("Edit with this Id not found");
+                return true;
+            }
         String name = input.askStr("Enter item's name: ");
         Item item = new Item(name);
         if (tracker.replace(id, item)) {

@@ -43,29 +43,29 @@ public class TrackerTest {
 
     @Test
     public void s1() {
-        TrackerSingle1 t = TrackerSingle1.INSTANCE;
-        TrackerSingle1 t2 = TrackerSingle1.INSTANCE;
+        Tracker t = TrackerSingle1.INSTANCE.getTracker();
+        Tracker t2 = TrackerSingle1.INSTANCE.getTracker();
         assertEquals(t, t2);
     }
 
     @Test
     public void s2() {
-        TrackerSingle2 t = TrackerSingle2.getInstance();
-        TrackerSingle2 t2 = TrackerSingle2.getInstance();
+        Tracker t = TrackerSingle2.getInstance();
+        Tracker t2 = TrackerSingle2.getInstance();
         assertEquals(t, t2);
     }
 
     @Test
     public void s3() {
-        TrackerSingle3 t = TrackerSingle3.getInstance();
-        TrackerSingle3 t2 = TrackerSingle3.getInstance();
+        Tracker t = TrackerSingle3.getInstance();
+        Tracker t2 = TrackerSingle3.getInstance();
         assertEquals(t, t2);
     }
 
     @Test
     public void s4() {
-        TrackerSingle4 t = TrackerSingle4.getInstance();
-        TrackerSingle4 t2 = TrackerSingle4.getInstance();
+        Tracker t = TrackerSingle4.getInstance();
+        Tracker t2 = TrackerSingle4.getInstance();
         assertEquals(t, t2);
     }
 }

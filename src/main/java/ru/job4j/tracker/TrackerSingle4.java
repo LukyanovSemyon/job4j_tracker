@@ -6,7 +6,7 @@ public class TrackerSingle4 {
     private TrackerSingle4() {
     }
 
-    public static TrackerSingle4 getInstance() {
+    public static Tracker getInstance() {
         return Holder.INSTANCE;
     }
 
@@ -15,10 +15,10 @@ public class TrackerSingle4 {
     }
 
     private static final class Holder {
-        private static final TrackerSingle4 INSTANCE = new TrackerSingle4();
+        private static final Tracker INSTANCE = new Tracker();
     }
 
     public static void main(String[] args) {
-        TrackerSingle4 tracker = TrackerSingle4.getInstance();
+        Tracker tracker = TrackerSingle4.getInstance();
     }
 }

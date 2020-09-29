@@ -9,8 +9,4 @@ public enum TrackerSingle1 {
     public Tracker getTracker() {
         return tracker;
     }
-
-    public Item add(Item model) {
-        return model;
-    }
 }

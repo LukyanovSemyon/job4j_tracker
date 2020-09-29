@@ -14,9 +14,5 @@ public class TrackerSingle2 {
         }
         return instance;
     }
-
-    public Item add(Item model) {
-        return model;
-    }
 }
 

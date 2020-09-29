@@ -2,9 +2,8 @@ package ru.job4j.tracker;
 
 import org.junit.Test;
 import static org.hamcrest.Matchers.is;
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertThat;
 import static org.hamcrest.core.IsNull.nullValue;
+import static org.junit.Assert.*;
 
 public class TrackerTest {
     @Test
@@ -45,27 +44,27 @@ public class TrackerTest {
     public void s1() {
         Tracker t = TrackerSingle1.INSTANCE.getTracker();
         Tracker t2 = TrackerSingle1.INSTANCE.getTracker();
-        assertEquals(t, t2);
+        assertSame(t, t2);
     }
 
     @Test
     public void s2() {
         Tracker t = TrackerSingle2.getInstance();
         Tracker t2 = TrackerSingle2.getInstance();
-        assertEquals(t, t2);
+        assertSame(t, t2);
     }
 
     @Test
     public void s3() {
         Tracker t = TrackerSingle3.getInstance();
         Tracker t2 = TrackerSingle3.getInstance();
-        assertEquals(t, t2);
+        assertSame(t, t2);
     }
 
     @Test
     public void s4() {
         Tracker t = TrackerSingle4.getInstance();
         Tracker t2 = TrackerSingle4.getInstance();
-        assertEquals(t, t2);
+        assertSame(t, t2);
     }
 }

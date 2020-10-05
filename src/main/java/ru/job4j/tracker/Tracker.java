@@ -40,6 +40,18 @@ public class Tracker {
         return  rsl;
     }
 
+    private int indexOfName(String key) {
+        int rsl = -1;
+        for (int index = 0; index < items.size(); index++) {
+            Item value = items.get(index);
+            if (value.getName().equals(key)) {
+                rsl = index;
+                break;
+            }
+        }
+        return  rsl;
+    }
+
     public Item findById(int id) {
         int index = indexOf(id);
         Item value = null;

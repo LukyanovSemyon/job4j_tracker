@@ -9,26 +9,17 @@ public class PassportOffice {
 
     public boolean add(Citizen citizen) {
         boolean rsl = false;
-        if (citizens.size() == 0) {
+        if (!citizens.containsKey(citizen.getPassport())) {
             citizens.put(citizen.getPassport(), citizen);
-            rsl = true;
-        }
-        for (String key : citizens.keySet()) {
-            if (!citizen.getPassport().contains(key)) {
-                citizens.put(citizen.getPassport(), citizen);
-                rsl = true;
-                break;
-            }
+          rsl = true;
         }
         return rsl;
     }
 
         public Citizen get(String passport) {
             Citizen value = null;
-            for (String key : citizens.keySet()) {
-                if (key.contains(passport)) {
-                    value = citizens.get(key);
-                }
+            if (citizens.containsKey(passport)) {
+                value = citizens.get(passport);
             }
             return value;
         }

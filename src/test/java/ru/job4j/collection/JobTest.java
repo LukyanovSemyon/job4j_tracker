@@ -49,7 +49,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriority() {
-        Comparator<Job> cmpNamePriority = new JobDescByName().thenComparing(new JobDescByPriority());
+        Comparator<Job> cmpNamePriority
+                = new JobDescByName().thenComparing(new JobDescByPriority());
         int rsl = cmpNamePriority.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -59,7 +60,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriorityReverse() {
-        Comparator<Job> cmpNamePriorityRev = new JobDescByNameRev().thenComparing(new JobDescByPriorityRev());
+        Comparator<Job> cmpNamePriorityRev
+                = new JobDescByNameRev().thenComparing(new JobDescByPriorityRev());
         int rsl = cmpNamePriorityRev.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -69,7 +71,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityAndName() {
-        Comparator<Job> cmpPriorityName = new JobDescByPriority().thenComparing(new JobDescByName());
+        Comparator<Job> cmpPriorityName
+                = new JobDescByPriority().thenComparing(new JobDescByName());
         int rsl = cmpPriorityName.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -79,7 +82,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityAndNameReverse() {
-        Comparator<Job> cmpPriorityNameRev = new JobDescByPriorityRev().thenComparing(new JobDescByNameRev());
+        Comparator<Job> cmpPriorityNameRev
+                = new JobDescByPriorityRev().thenComparing(new JobDescByNameRev());
         int rsl = cmpPriorityNameRev.compare(
                 new Job("Impl task", 0),
                 new Job("Fix bug", 1)
@@ -89,7 +93,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByNameAndPriorityReverseNamesAreSame() {
-        Comparator<Job> cmpNamePriorityRev = new JobDescByNameRev().thenComparing(new JobDescByPriorityRev());
+        Comparator<Job> cmpNamePriorityRev
+                = new JobDescByNameRev().thenComparing(new JobDescByPriorityRev());
         int rsl = cmpNamePriorityRev.compare(
                 new Job("Impl task", 0),
                 new Job("Impl task", 1)
@@ -99,7 +104,8 @@ public class JobTest {
 
     @Test
     public void whenComparatorByPriorityAndNamePrioritiesAreSame() {
-        Comparator<Job> cmpPriorityName = new JobDescByPriority().thenComparing(new JobDescByName());
+        Comparator<Job> cmpPriorityName
+                = new JobDescByPriority().thenComparing(new JobDescByName());
         int rsl = cmpPriorityName.compare(
                 new Job("Impl task", 1),
                 new Job("Fix bug", 1)

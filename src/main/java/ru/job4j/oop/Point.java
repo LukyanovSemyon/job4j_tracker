@@ -25,7 +25,8 @@ public class Point {
     }
 
     public double distance3d(Point that) {
-        double result = sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2) + pow(this.z - that.z, 2));
+        double result = sqrt(pow(this.x - that.x, 2) + pow(this.y - that.y, 2)
+                + pow(this.z - that.z, 2));
         return (double) Math.round(result * 100) / 100;
     }
 }

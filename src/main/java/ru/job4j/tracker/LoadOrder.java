@@ -4,7 +4,8 @@ public class LoadOrder {
     private static final class Holder {
         private static final LoadOrder INSTANCE = new LoadOrder("static inner field");
     }
-    private static String static_field = echo("static field");
+
+    private static String staticField = echo("static field");
 
     private static final String STATIC_FINAL_FIELD = echo("static final field");
 

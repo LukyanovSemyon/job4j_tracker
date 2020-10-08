@@ -86,4 +86,24 @@ public class JobTest {
         );
         assertThat(rsl, greaterThan(0));
     }
+
+    @Test
+    public void whenComparatorByNameAndPriorityReverseNamesAreSame() {
+        Comparator<Job> cmpNamePriorityRev = new JobDescByNameRev().thenComparing(new JobDescByPriorityRev());
+        int rsl = cmpNamePriorityRev.compare(
+                new Job("Impl task", 0),
+                new Job("Impl task", 1)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
+
+    @Test
+    public void whenComparatorByPriorityAndNamePrioritiesAreSame() {
+        Comparator<Job> cmpPriorityName = new JobDescByPriority().thenComparing(new JobDescByName());
+        int rsl = cmpPriorityName.compare(
+                new Job("Impl task", 1),
+                new Job("Fix bug", 1)
+        );
+        assertThat(rsl, greaterThan(0));
+    }
 }

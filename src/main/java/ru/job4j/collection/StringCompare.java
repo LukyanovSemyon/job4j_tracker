@@ -8,21 +8,16 @@ public class StringCompare implements Comparator<String> {
         int rsl = 0;
         char[] leftCharArr = left.toCharArray();
         char[] rightCharArr = right.toCharArray();
-        int length = Math.max(leftCharArr.length, rightCharArr.length);
-        int[] leftIntArr = new int[length];
-        for (int i = 0; i < leftCharArr.length; i++) {
-            leftIntArr[i] = left.charAt(i);
-        }
-        int[] rightIntArr = new int[length];
-        for (int i = 0; i < rightCharArr.length; i++) {
-            rightIntArr[i] = right.charAt(i);
-        }
+        int length = Math.min(leftCharArr.length, rightCharArr.length);
             for (int i = 0; i < length; i++) {
-                int rsl1 = Integer.compare(leftIntArr[i], rightIntArr[i]);
+                int rsl1 = Integer.compare(leftCharArr[i], rightCharArr[i]);
                 if (rsl1 != 0) {
                     rsl = rsl1;
                     break;
                 }
+            }
+            if (rsl == 0) {
+                rsl = Integer.compare(leftCharArr.length, right.toCharArray().length);
             }
         return rsl;
     }

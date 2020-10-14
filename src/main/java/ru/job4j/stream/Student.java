@@ -1,6 +1,7 @@
 package ru.job4j.stream;
 
-import java.util.Objects;
+import java.util.*;
+import java.util.stream.Collectors;
 
 public class Student {
     private int score;
@@ -42,5 +43,25 @@ public class Student {
         return "Student{" + "score="
                 + score + ", surname='"
                 + surname + '\'' + '}';
+    }
+
+    public static void main(String[] args) {
+        List<Student> students = List.of(
+        new Student(10, "Surname1"),
+        new Student(20, "Surname2"),
+        new Student(30, "Surname3"),
+        new Student(40, "Surname4"),
+        new Student(50, "Surname5"),
+        new Student(60, "Surname6"),
+        new Student(70, "Surname7"),
+        new Student(80, "Surname8"),
+        new Student(90, "Surname9")
+        );
+        Map<String, Integer> map = students.stream()
+                .collect(Collectors.toMap(
+                Student::getSurname,
+                Student::getScore
+        ));
+        System.out.println(map);
     }
 }

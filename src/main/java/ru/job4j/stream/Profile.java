@@ -1,9 +1,6 @@
 package ru.job4j.stream;
 
-import java.util.Comparator;
-import java.util.List;
 import java.util.Objects;
-import java.util.stream.Collectors;
 
 public class Profile {
     private Address address;
@@ -53,27 +50,6 @@ public class Profile {
         return "Profile{" + "address="
                 + address + ", name='"
                 + name + '\'' + '}';
-    }
-
-    public static List<Address> collect(List<Profile> profiles) {
-        List<Address> rsl = profiles.stream()
-                .map(location -> location.address)
-                .sorted(Comparator.comparing(Address::getCity))
-                .distinct()
-                .collect(Collectors.toList());
-        return rsl;
-    }
-
-    public static void main(String[] args) {
-        List<Profile> profiles = List.of(
-                new Profile(new Address("SPb", "Nevskiy", 45, 3), "Ivan"),
-                new Profile(new Address("SPb", "Sadovaya", 22, 5), "Petr"),
-                new Profile(new Address("SPb", "Sadovaya", 22, 5), "Petr"),
-                new Profile(new Address("Moscow", "Neglinnaya", 14, 7), "Petr"),
-                new Profile(new Address("SPb", "Lomonosova", 20, 4), "Egor")
-        );
-        List<Address> location = collect(profiles);
-        location.forEach(System.out::println);
     }
 }
 

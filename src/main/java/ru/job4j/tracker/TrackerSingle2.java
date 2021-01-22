@@ -1,16 +1,14 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.Item;
-
 public class TrackerSingle2 {
-    private static Tracker instance;
+    private static Store instance;
 
     private TrackerSingle2() {
     }
 
-    public static Tracker getInstance() {
+    public static Store getInstance() {
         if (instance == null) {
-            instance = new Tracker();
+            instance = new SqlTracker();
         }
         return instance;
     }

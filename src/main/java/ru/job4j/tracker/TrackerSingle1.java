@@ -1,12 +1,10 @@
 package ru.job4j.tracker;
 
-import ru.job4j.tracker.Item;
-
 public enum TrackerSingle1 {
     INSTANCE;
 
-    private final Tracker tracker = new Tracker();
-    public Tracker getTracker() {
+    private final Store tracker = new SqlTracker();
+    public Store getTracker() {
         return tracker;
     }
 }

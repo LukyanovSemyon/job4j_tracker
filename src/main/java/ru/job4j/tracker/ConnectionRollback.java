@@ -11,7 +11,8 @@ import java.sql.SQLException;
 public class ConnectionRollback {
 
     /**
-     * Create connection with autocommit=false mode and rollback call, when conneciton is closed.
+     * Create connection with autocommit=false mode and rollback call,
+     * when connection is closed.
      * @param connection connection.
      * @return Connection object.
      * @throws SQLException possible exception.
